@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="「等我想好简介了就会把这里填上的。」">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      正确地使用Xcode构建命令行程序工程.md | Cowsay&#39;s Log
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Cowsay's Log</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>正确地使用Xcode构建命令行程序工程.md</h2>
+  <p class="post-date">2019-01-29</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><blockquote>
+<p>「我再也不用Swift了！命令行程序根本跑不起来！」</p>
+</blockquote>
+<p>一节数值分析课过后</p>
+<blockquote>
+<p>「哇终于配置对了！Swift赛高！」</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<p>这篇文章中提到的若干技巧来自<a href="https://medium.com/livefront/how-to-add-a-dynamic-swift-framework-to-a-command-line-tool-bab6426d6c31" target="_blank" rel="noopener">这里</a>。</p>
+<p>Xcode中默认的项目配置中是有一个「命令行程序」的，但是它非常得废。如果是用Swift编写这样的一个项目中的代码，然后想要链接任何自建的框架的话，就会在运行时报错无法找到Swift标准库的动态链接库。在同一个工程中包含多个项目，主项目生成一个框架（工具库），副项目生成基于该框架的可执行程序，这应该是一个很常见的架构，然而在Apple看来在Swift语言范畴内就是不常见。Apple似乎认为任何接口都应该是桌面应用，所以一个框架搭配一个桌面应用的工程就可以开箱即用，在Flawed之前的版本中我也只能如此做，直到桌面应用的复杂度最终超出了不分散我精力的极限。</p>
+<p>Apple是非常严厉的动态链接库的推广者，在Xcode中很难找到静态链接一个库的生成选项了。因此一个单文件的命令行程序是无法独自苟活的，务必要在运行时找到它所使用的框架才行。我并不希望把自建的框架安装到系统路径或者当前用户路径下，因此它和命令行程序之间务必要保持稳定的相对路径关系。把命令行程序装进框架文件夹里是不可行的（我会在文末解释），那么就只能把两者装进一个根文件夹里了。事实上，Xcode提供了面向这样需求的生成目标——bundle，抱着物尽其用的心态我决定用它来包裹命令行程序。</p>
+<p>所谓的bundle其实就是某种内部结构固定的文件夹，事实上桌面应用（<code>.app</code>）和框架（<code>.framework</code>）都遵循这一内部结构，所以它们只是bundle的特例。在工程中创建好第三个bundle类型的项目，在它的「构建环节」中添加两个「复制文件」的环节，一个把框架项目的构建结果复制到「框架」，一个把命令行项目的构建结果复制到「Shared Support」，如下</p>
+<p><img src="/assets/flawed-build-phase-screenshot.png" alt="构建环节配置"></p>
+<p>（突然意识到两个构建结果是从<code>build/Debug</code>中抽出来的，不知道生成release版本会不会有什么问题）</p>
+<p>然后就可以从构建结果所在的目录下，用如下路径运行命令行程序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./FlawedCliWrapper.bundle/Contents/SharedSupport/FlawedCli</span><br></pre></td></tr></table></figure>
+<p>当然现在运行还是要报错的。</p>
+<hr>
+<p>Swift编写的命令行程序在生成时有一个莫名其妙的行为：它既要将Swift标准库静态链接进可执行文件，又要在运行时动态寻找和链接Swift标准库。当然可以通过选项将前者关闭，但是这样就会链接失败；后者并没有相关的选项，貌似只要是Swift项目就一定要动态链接，所以只能让Swift标准库出现在它能找到的地方；如果是这样，运行时又会报warning，说标准库的内容在两处被重复实现了，非常令人不爽。</p>
+<p>解决的办法是通过两个自定义选项，将<code>SWIFT_FORCE_DYNAMIC_LINK_STDLIB</code>设为<code>YES</code>，将<code>SWIFT_FORCE_STATIC_LINK_STDLIB</code>设为<code>NO</code>。然后在Runpath搜索路径里添加一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@executable_path/../Frameworks/Flawed.framework/Versions/Current/Frameworks</span><br></pre></td></tr></table></figure>
+<p>并且确保框架项目的「总是内置Swift标准库」是开启的，这样标准库相关的动态链接库才会出现在上述的目录下。这样一来就可以顺利运行了。</p>
+<hr>
+<p>bundle项目会创建一个目录，底下只有一个<code>info.plist</code>文件，看着有点不爽。可以把它剪切到命令行程序的目录下，并相应地修改bundle的生成选项即可。（当然有的狼人一定会想把命令行程序代码也放进框架的目录下……开心就好。）</p>
+<p>那么，为什么不能直接把命令行程序复制进框架目录呢？命令行程序应当是依赖框架的，这样当框架代码改变时，重新生成命令行程序才会引起框架的重新生成；如果将命令行程序复制进框架目录，那最终框架目录的内容也要依赖于命令行程序了，每当命令行程序代码改变，框架也需要重新生成一次，这样进引入了循环依赖。因此只能将它们都复制到第三个项目当中。</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/25/2019-1-25-Flawed：本年度最有希望写完ver1.0的项目/">
+        <span class="nav-arrow">← </span>
+        
+          Flawed：本年度最有希望写完ver1.0的项目
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://whoiscc.github.io/2019/01/29/2019-1-29-正确地使用Xcode构建命令行程序项目/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

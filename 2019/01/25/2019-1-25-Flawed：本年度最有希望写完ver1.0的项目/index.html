@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="「等我想好简介了就会把这里填上的。」">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Flawed：本年度最有希望写完ver1.0的项目 | Cowsay&#39;s Log
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Cowsay's Log</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Flawed：本年度最有希望写完ver1.0的项目</h2>
+  <p class="post-date">2019-01-25</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><blockquote>
+<p>什么？今年不是刚开始吗？</p>
+</blockquote>
+<p>当然要立个下血本的flag啦。为了个人编程史上第一个完成1.0版本的「实用」项目，就算搭上接下来一年其他项目的运势也算不上什么。大不了这一年就写这一个项目了呗。代码仓库在<a href="https://github.com/whoiscc/flawed" target="_blank" rel="noopener">这里</a>，希望不要突然某天又404掉。</p>
+<a id="more"></a>
+<p>说起由本人设计的云编程语言，投入了可观精力的主要有两个，目前通用的名字分别是pieces和lalang。后者为严格遵循原型链集成的面向对象范式，对象也是对象类型也是对象，又想在运行时创建对象又想集成类型检查的后果就是类型检查只能在运行时进行——你的类型可能在编译的时候还不存在呢。（扯远了）前者则干脆一切都是piece，也就是某种类似于乐高积木的东西。总而言之，它们的设计都是朝着「高度特化的玩具语言」去的，以至于我经常称之为「杂技语言」。我认为，凭借个人的力量是做不出好的工业编程语言的。无论是出于对自身编程能力和编程语言设计能力的提升方面的考量，还是出于对未来项目博眼球程度的考量，做一门杂技语言都比做一门工业语言要划算得多。</p>
+<p>这种想法也许没有错，但是我对自己的评估犯了严重的错误：我也没有能力做出一门杂技语言。倒不是说我的水平有多大的差距——那都是可以靠着学习弥补的，而是因为我的性格和心态不适合。我实在是一个太容易<strong>沉迷于细节当中去</strong>的人了。前几天回家时得出了这个结论，对我来说真的如同醍醐灌顶。我非常喜欢以分钟或者小时为单位对自己的生活进行规划，然而一想到未来几年乃至十年的发展路线时却永远都充满了恐惧——比如说，我对来美国学习的恐惧一直持续到一月份才慢慢减轻。恐惧的原因是「不愿意去想却又躲不开」，那么对于那些没人逼着我去想的事，比如一门编程语言的设计哲学，我的思路自然就和我玩起了打地鼠。我几乎永远都在思考词法和语法分析层面上，或者说，于编程语言使用者之间界面相关的「小问题」，比如说我不喜欢字面量的存在，那么怎么把它规避掉；比如说怎么用隐式的（同时容易让人犯错的）resolve的方式来代替现在普遍采用的显式导入模块的语言，等等。至于接下来，语义分析和后端代码生成，我甚至连基本流程和数据结构都没有考虑过。杂技语言的前端特性太过于有个性，以至于我可以把全部的时间用于将其雕琢得完备并<strong>深深地陶醉其中</strong>——这可真是我在思考时最大的恶习了。就像补阴的药草只能生长在阳光充沛的温暖地带，补阳的药草则生长在背阴的凉爽处，对于我这种喜欢在各种小细节上奇思妙想的人来说，整个语言必然只能具有一种非常平庸的基调，甚至可以说是「土味」，才能和我的相性达成互补。</p>
+<p>Flawed就是这样的一个项目。之所以写下这么一篇文章，就是因为刚刚洗澡的时候我发现自己已经将中间表示基本想通了，感慨自己自从在编译原理上学到这一部分的知识以后还从来没有用到过，出来就起了这么一个标题。不过这篇文章估计不会涉及语法设计以外的部分了——不然它的篇幅又将人神共愤。实际上，主要的阐述就是以上一段话了。接下来会简单描述一下它的语法，以及这样设计的一些理由。</p>
+<hr>
+<p>一门编程语言，设计成什么样才会被称为是「有缺陷的」（flawed）呢？首先不能是「完美无缺的」，然后还不能残缺到让人无法接受的程度。在我看来，需要区分声明（statement）和表达式（expression）是一个比较符合要求的「缺陷点」。事实上，由于我不承认「赋值语句的值等于被赋的值」（也就拒绝了<code>a = b = 42</code>这种比较符合直觉的写法），这缺陷其实以及来到了疯狂的悬崖边上——表达式是不可能成为声明的，而赋值声明又无法成为表达式从而无法在语言中出现，那么结论就是这语言没有赋值了！这就是我在pieces中的设计，所有新的「名字」都是通过匿名函数的参数引入的，写起来还蛮顺手的，又顺手又想打死语言设计者那种。我不喜欢C语言意义上的那种左右值之间的赋值，因此赋值语句被设计成类似Swift和Rust那种「名字绑定」的概念：等号的左侧只是一个「名字」，它并不拥有一个内存格子，内存格子还是由等号右侧的表达式所拥有，这个名字只是一个指向格子的箭头。真正意义上的箭头，末端在程序员的手里，而不是像C语言的指针那种从另一个内存格子发出来。哦对了，「赋值不要用等号」算是我的某种执念吧，然后<code>:=</code>在那些冒号不垂直居中的等宽字体中又无比难看，所以最终选择了R的风格（之一）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- 42</span><br><span class="line">x &lt;- x + 1</span><br></pre></td></tr></table></figure>
+<p>编译后的中间表示目前是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x5 &lt;- 42</span><br><span class="line">x6 &lt;- 1</span><br><span class="line">arg x5, x6</span><br><span class="line">x7 &lt;- call x0</span><br></pre></td></tr></table></figure>
+<p>关于为什么从<code>x5</code>开始，以及<code>arg</code>和<code>call</code>的具体含义在之后讲到中间表示和解释器模型的文章里再详细阐述。只要注意到，源代码第一行的<code>x</code>对应中间表示第一行的<code>x5</code>，第二行的<code>x</code>对应中间表示第四行的<code>x7</code>。它们可能都「指的是」同一个内存格子，当我的后端生成器发现在<code>x7</code>被定义以后<code>x5</code>就再也没有被使用过以后就可以轻易地做出这个优化。</p>
+<p>今天不写解释器模型心里有点痒痒，剧透一下，这是一门像Swift一样，内建引用计数垃圾回收的「不怎么注重性能」的「可以静态编译的」语言。</p>
+<hr>
+<p>声明除去赋值以外目前还有两种：块和条件分支。块的意义只有一个：引入块级作用域。在C语言中块级作用域可以由函数定义、条件分支定义或者各种循环引入（switch有没有这个功能记不得了），虽然说可以说「有花括号的地方就有块级作用域」看起来很统一，但是毕竟数组和结构字面量也有花括号是吧……在Flawed中只有块声明才有块级作用域，而块声明可以和条件分支以及函数声明之类的搭配使用（言外之意它们也可以不搭配块声明，就没有块级作用域了），这才是本质上的统一嘛。——你看，我果然会在细节上登峰造极。</p>
+<p>块的词法采用了Haskell和Purescript的解决方案：只看缩进。因此，下面代码中，第三行的<code>x</code>引用的是第一行的<code>x</code>而不是第二行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- 42</span><br><span class="line">  x &lt;- x + 1</span><br><span class="line">x &lt;- x + 2</span><br></pre></td></tr></table></figure>
+<p>缩进格数不要求，只要比之前一行的缩进深就行。块结束时对齐到哪一层就结束掉这一层里面的所有内层块，要是不和任何一层对齐就是词法错误。虽说像Python一样加一个冗余的冒号可以降低词法分析器的难度（只有冒号出现之后一行的缩进才能定义更深层的块……好像也没有降低什么难度……）并减少犯错的几率，但是自从在各种语言里下意识地写了无数冒号以后我就决定坚决抵制之了。</p>
+<hr>
+<p>条件分支做成声明还是表达式？真是非常令人纠结。最终选择做成声明的原因是，据我观察绝大多数条件分支还是没有一个具有实际含义的「值」的，比如C语言里非常喜欢的「检查返回值非零即返回」逻辑。实际上由于块是一个声明了，如果条件分支做成表达式，它的真假分支不能是块只能是表达式的话就无法获得块级作用域而无法定义新的名字，使用上会受到很大的限制。可不可以把条件分支定义成接受两个闭包作为真假分支的内建函数呢？……这听起来就太有我的个人风格了，我拒绝。</p>
+<p>要注意到，由于条件分支的真假分支都只要求是声明，而一个简单的赋值声明也是声明，因此</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if something</span><br><span class="line">x &lt;- 0</span><br><span class="line">else</span><br><span class="line">x &lt;- 1</span><br></pre></td></tr></table></figure>
+<p>这种不加缩进的写法理论上就可以起到「条件分支表达式」的效果，当然也可以用某种方式把这些写在同一行内，但是这两者和目前的词法都有些微妙的不兼容，而且这样的话可能需要添加语义规则，以确保某个名字不会只在真假分支中的一个出现（这里的限制比直觉上要宽松一些，比如可以这样）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- 42</span><br><span class="line">if something</span><br><span class="line">x &lt;- 0</span><br><span class="line">else</span><br><span class="line">  y &lt;- 0</span><br><span class="line">z &lt;- x + 1</span><br></pre></td></tr></table></figure>
+<p>（（因为目前假分支还不是可选的所以也加上了。）这时<code>z</code>无论如何还是有一个可以引用的<code>x</code>的，而且这种写法也具有实际意义。）</p>
+<p>由于我对赋值声明的定义，块声明内部是无法对外部的名字产生任何副作用的，因此「条件分支表达式」这个需求实际上是必不可少的，值得认真斟酌一下。</p>
+<hr>
+<p>最后来说表达式。「原子」表达式有目前有标识符、整数和函数定义以及括号提升优先级四种（关于浮点数以后再讨论）。函数最终作为一种表达式而不是声明让人嗅到了一丝杂技的味道，但是我认为就算是C的做法其实也只是某种自欺欺人而已。最终还是让函数（的指针）可以像普通的值一样自由地赋值给变量以及作为参数调用函数。函数一个非常重要的作用自然是闭包，这也是语言要内建垃圾收集的原因：不然闭包定义实在是太痛苦了。虽然理论上是多余的，但我还是在函数字面量的开头加上了<code>func</code>关键字，因为不然的话就会把上下文无关语法搞得一团糟——和普通的括号括起来的表达式非常难以区分。也许今后可以考虑把函数调用和函数定义换用另外的括号种类，不过现在这样可以省下函数定义的括号（调用的括号理论上也可以省略），也蛮好的。</p>
+<p>除此之外的表达式分别是各种优先级的二元运算、单目运算和函数调用，优先级依次上升。Flawed允许用户自定义运算符而不仅仅是重载现有的运算符，这自然要引入优先级的问题。相比起Haskell的定义优先级级别的语法，我还是选择Neo的「按照打头一个符号决定优先级」的策略。一方面<code>infixl &lt;+&lt; 8</code>里面的常数让人很不爽——它是从哪来的？我是不是还要查个表？它的上下限是根据什么定的？——同时这种写法对语法分析引入了额外的上下文相关的负担。虽然说我现在也是一个手写的递归下降语法分析器，其实可以随便搞，但还是让人觉得不爽。用打头一个符号的局限在于像<code>&lt;+&lt;</code>这种符号就只能写成<code>+&lt;&lt;</code>才能具有和加号相同的优先级了，看上去不太……形象？也许接下来可以找到两全其美的方案吧。</p>
+<hr>
+<p>最终还是写得太长了。也许这些语法明天就变了，这也是一定要把它记下来的原因。就像这个博客的标题所明示的，这些都是我的日志。日志原本就是用来捕捉这些虚无缥缈的事物的踪迹以供日后研究的。不管怎么说，久违地一连打了一个半小时的字，还是挺爽的。</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/01/02/2019-1-2-新年新废话/">
+        <span class="nav-arrow">← </span>
+        
+          新年新废话
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/01/29/2019-1-29-正确地使用Xcode构建命令行程序项目/">
+        
+          正确地使用Xcode构建命令行程序工程.md
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://whoiscc.github.io/2019/01/25/2019-1-25-Flawed：本年度最有希望写完ver1.0的项目/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

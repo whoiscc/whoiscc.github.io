@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="「等我想好简介了就会把这里填上的。」">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      活在梦里的项目一览【四】 | Cowsay&#39;s Log
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Cowsay's Log</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>活在梦里的项目一览【四】</h2>
+  <p class="post-date">2018-09-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>说实话最后的两天真是没有什么学习的心情了。今天下午算是七天假的买七送半天，能够怀有如同放长假一般的心情度过原本不是长假的一下午，真不知顶上多少个没有这种心情的闲暇下午啦。</p>
+<p>对博客做出了一点修改：彻底放弃分类和标签功能。因为我发现写那些对我来说已经可以算是煎熬了，还非要在行文之前解决，更是雪上加霜，影响了表达的心情就严重啦。稍后前几篇文章的分类和标签都会被删掉。</p>
+<a id="more"></a>
+<p>一直以来我都有着一个计划，或者说，好奇着一个问题的答案：找出哔哩哔哩播放量最高的视频。也许是我天资愚钝，没有发现B站官方提供的接口。最初的最初，我以为古筝狂魔的千本樱会是我要找的视频，因为它在很长一段时间里都是我所知道的唯一的破700万/800万/1000万的视频。可是后来发生了两件事，第一件是我爬到了Fate/Zero的总集页，发现番剧的播放量是各集加起来的（至少我所用到的接口会返回这样的数据），轻轻松松就比普通的视频多。经过权衡，我决定简化我的问题，就把我用到的接口返回的信息单元对应的内容看做是一个视频；第二件事就是白鼠的papi酱鬼畜横空出世，在一个月内破了一千万。</p>
+<p>总而言之，现在我的目标是：单线程异步发起网络请求（只要别快到被ban就好），查询哔哩哔哩接口并写入数据库。最初的时候一个sqlite数据库就好，现在好像有点吃紧了，因为B站的视频总量规模从我开始想这个项目开始膨胀了100倍（看看人家花了两年干了什么，再看看你，除了想还干了什么没有）。如果可以的话，再为这个项目添加一个可视化的web展示页。最重要的是，它应当具有定期刷新数据库的能力，以及批量重试的功能。爬完视频爬弹幕和评论，再爬完爬相关视频推荐，没有我想不到，只有我硬盘存不下（滑稽</p>
+<hr>
+<p>之前介绍的语言计划多少都跟LISP有点关系，包括之前没有说到的一点：如果实现出了标准的Scheme，那么也许可以试一下各种高度优化策略，以及静态生存周期分析等等。在我自己这里关于语言的想法，还有朝向另一个极端的探索：纯粹面向对象的实验语言。我曾经以为Smalltalk是这样的语言，但是后来发现我想得比它还要「纯净」。</p>
+<p>对象是什么？<del>对象是一起睡觉觉的人。</del>一个最简单的对象定义也许是这样的：</p>
+<blockquote>
+<p>一个对象是一个字典，键是字符串，值是方法。</p>
+</blockquote>
+<p>这样还不够，还要加上：</p>
+<blockquote>
+<p>在对象字典的值（也就是各个方法）中，存在一个特殊的上下文指针<code>this</code>，指向代表对象的字典本身。</p>
+</blockquote>
+<p>这样基本就够了。如果还不够，那么就是我们对于「字典」的定义不够充分了。注意，这里的对象没有数据，没有可变的内部状态，这纯粹是个人喜好决定的，我所讨论的对象是不可变的对象。想要构建一个具有可变状态的对象，也不一定就比这个模型复杂，但是可能要舍弃一些其他的特性就是了。</p>
+<p>这个定义除了不可变以外，其实蕴含着一个深层次的，与现在主流的面向对象范式之间真正的巨大分歧：对象的类型在哪里？它只是一个字典，它没有类型了。而事实上，每一个对象都既可以被当做值，又可以被当做类型来使用！这就是这门语言的精髓之处，它打通了对象模型和Dependent Type之间的次元壁。</p>
+<p>我实在很想向（并不存在的）各位分享一下构想中的语言写程序（在构想中）会是怎样的体验，但是第一这份介绍的差事留到我可以用实际的项目和代码做示范的时候应该会爽上加爽；第二讲多了我可能会忍不住会去实现它（毕竟一个大号/大好的假期正等着我填满它（咦~））；最后，突然涌上来的慵懒让我丧失了继续叙述的动力（喂说了这么多都是因为懒对吧）。</p>
+<p>心目中的项目总算被讲得七七八八了。剩下的一些基本只是简单地看上了某个项目的模型，想要去山寨一个出来的程度，时间久了就不太记得了。</p>
+<p>最后，作为有幸活在这个伟大的时代的青年人，怎么会对人工智能一点想法都没有呢？2o48写出来以后，说不定我会给它加一个「我玩我自己」的模块呢，走着瞧~</p>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/09/27/2018-9-27-活在梦里的项目一览【三】/">
+        <span class="nav-arrow">← </span>
+        
+          活在梦里的项目一览【三】（没想到吧）
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/10/13/2018-10-13-理想主义向现实主义崩塌的正确方式/">
+        
+          理想主义向现实主义崩塌的正确方式
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://whoiscc.github.io/2018/09/30/2018-9-30-活在梦里的项目一览【四】/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="「等我想好简介了就会把这里填上的。」">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      活在梦里的项目一览【一】 | Cowsay&#39;s Log
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Cowsay's Log</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>活在梦里的项目一览【一】</h2>
+  <p class="post-date">2018-09-23</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>这会是一个大约月更或者半年更的长期系列。每当有项目在我脑海中活了足够久，达到了「我如果不用上课/睡觉/玩游戏（你本来也不用）第一件事就是把它从头写到尾」的程度的时候，它离出现在这里也不远了。此外，一个项目即使开始写了也会在这里出现一次，因为可能过不了多久它就又回到梦里去了。</p>
+<a id="more"></a>
+<p>先从眼前说起吧。这个基于Jekyll的<del>博客</del>日志站只是它的临时形态，因为它的完整体没有被人写过也太难写了，一个中秋佳节大概是不够用的。「临时」也就意味着再多的改动也是会被历史的洪流抹杀殆尽的，所以除了写文章以外，只有一些至关重要的操作必须被执行：</p>
+<ul>
+<li>……仔细想了想还真没什么。好好写内容吧。</li>
+</ul>
+<hr>
+<p>出于对现有博客形态的不满，写一个静态/动态博客生成器的计划由来已久。不满基本集中在以下三点：</p>
+<ul>
+<li>Markdown的限制太多了。</li>
+<li>博客的日常操作（添加文章/添加评论栏等）和高端操作（更改页面结构/更改网站结构）对新手太不友好了。在我看来，搭建技术博客应该是每一个接触编程的人最开始就去做的事情，<del>不然就可能会变成我这个样子</del>放心不会有人变成你这副蠢样的。</li>
+<li>不够酷炫。</li>
+</ul>
+<p>基于这些抱怨，中立善良的计划是：重新发明静态站生成器，项目代号yiblan。</p>
+<p>这个静态站生成器可以接受更加类似于「日记本」的输入，并更加主动的去「猜」它所需要的信息。比如，它会读取博客文章的文件的创建日期和修改日期，根据目录结构确定文章的分类，并且根据用户提供的「标签一览表」文件，在每篇博文的内容中搜索各标签，自动为文章贴上其内容中出现了的标签。这样，用户几乎不需要在博文文件的开头添加任何附加信息了。yiblan也会将各文章的创建日期写入一个数据文件中并优先读取数据文件中的信息，这样就算实际文件的日期发生了问题也可以手动控制。这是一个只能解决部分问题的方案，它还是要依赖Markdown，对于创建图片等外部资源的链接也没有任何帮助。</p>
+<p>在读取了全部信息以后，yiblan会生成一系列的json文件而非网页页面。一个基于vue的单页面前端会在合适的时候访问这些json数据。用户可以通过编写vue组件的方式定制自己的页面样式。</p>
+<hr>
+<p>守序邪恶的计划是：一个类似于Wordpress的全功能博客模板。具体的特性在[之前的文章][1]中详细的列举过了。laravel写成的后端负责返回所有的json数据，和yiblan的静态json文件一致；除此之外它还维护一个账号系统，出于对预计部署的环境（如heroku）的不信任，这个账号系统会跳GitHub API，让GitHub帮我管理密码就好了。登陆成功后前端用完全相同的接口请求到完全相同的json数据，但是交由另外一批组件将其以可编辑的形式展示出来。编辑过程中前端会频繁地将diff发给后端，确保用户数据不会丢失。理论上在用户本地的storage里也可以放一份。可以看出，这个前端比yiblan的要复杂一倍以上，如果不考虑项目间的代码复用可以用react重新写一遍。</p>
+<p>博客文章不再以Markdown等富文本「文本」格式储存。一篇文章将始终表示为json字典/PHP字典/JavaScript对象，如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> article = &#123;</span><br><span class="line">  type: <span class="string">"paragraph"</span>, <span class="attr">value</span>: &#123;</span><br><span class="line">    type: <span class="string">"sequence"</span>, <span class="attr">value</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        type: <span class="string">"text"</span>, <span class="attr">value</span>: <span class="string">"Hello, "</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        type: <span class="string">"bold"</span>, <span class="attr">value</span>: &#123;</span><br><span class="line">          type: <span class="string">"text"</span>, <span class="attr">value</span>: <span class="string">"world!"</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>高度冗长的格式确保高度的拓展性。这样一来，上一篇文章中必须出现在脚注里的名言引用就可以插入到列表的中间了。当然了，这样一来我就必须发明这种新的富文本「对象」格式，以及它的diff格式。在用户编辑文章时，不再展示「所见即所得」的编辑视图，而是将这个对象显式地展示出来。这可以看作是「语法树代码编辑器」的初步尝试。</p>
+<hr>
+<p>说到语法树代码编辑器，就把这个编辑器先写在这里吧，因为很快可能会忘记。这是一个基于WPF的文本编辑器项目，代号lkjpoi。最初想到这个点子纯粹是因为想学习一下WPF，然后发现这东西的API设计一流，还有一定的可移植性，于是野心膨胀。用C去写核心逻辑，在Windows端用C++/CLI对接到用C#写的WPF视图，在macOS端用桥接头文件对接到Swift写的Cocoa视图（是的我还得学习一下Swift），在web端试试编译到wasm，然后对接到es6写的React视图，在linux端就不用中间层了，直接对接到Gnome视图就好。上面提到了语法树代码编辑，是指在前端不再展示字符串形式的代码，而是树形结构的语法元素。这需要发明语法树的文件格式，毕竟我不想给每种语言都写半个前端。这样，这个编辑器就不需要进行字符串到语法树的转换工作了。往回转换是比较容易的，编辑器可以把语法树转换回普通的字符串文件交给clang/gcc去编译，或者我还可以发明接受语法树输入的编译器，不过这个想法太遥远了，暂时还没轮上做梦。</p>
+<hr>
+<p>一个基于流操作的2048游戏，通常被称为2o48，但是我的项目通常具有一个六个字符长且字母开头的名字，所以代号为twoO48。要写这个项目首先要把支撑它的前端框架写好，这应该是一个非主流的FRP框架（话说，FPR本身就很非主流了吧……）。在整个框架中，信息在不同的流之间传递被明确地划分为三个阶段：</p>
+<ul>
+<li>信号输入，包括用户的输入，定时信号时间到，以及网络请求收到了回复等等。这些信号是系统之外自然出现的。</li>
+<li>数据流，通过信号得到一个包含了整个应用全部信息的数据集合体。</li>
+<li>视图流，通过对数据进行变换获得页面上的每个像素点/DOM元素的全部信息。</li>
+</ul>
+<p>以最精简的方式描述这个库的工作方式就是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user code</span></span><br><span class="line"><span class="keyword">import</span> mylib <span class="keyword">from</span> <span class="string">'mylib'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertSignalsToData</span>(<span class="params">singals</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertDataToViews</span>(<span class="params">data</span>) </span>&#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line"></span><br><span class="line">mylib.run(convertSignalsToData, convertDataToViews);</span><br><span class="line"></span><br><span class="line"><span class="comment">// inside mylib</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">s2d, d2v</span>) </span>&#123;</span><br><span class="line">  mylib.mountViews(d2v(s2d(mylib.getSignals())))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>能这么简单就见鬼啦。举一个棘手的例子，有些信号是由视图流产生的，怎么把这个反馈机制做出来，就很难。</p>
+<p>所以说，这个项目最终要写个2048出来，厉害吧。</p>
+<hr>
+<p>写着写着居然累得不行。剩下的明天再继续写吧。说真的，这些项目我都不想写了，就光写这博客，说「我要写什么什么」，就完事算了。</p>
+<p>或者，把博客换成妹子，再好不过了。</p>
+<p>[1]: <a href="/2018/09/21/2018-9-22-这次我真的是来好好写博客的/" title="「这次我真的是来好好写博客的！」">「这次我真的是来好好写博客的！」</a>#wonderful-blog-generator</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#人话">
+    <span class="tag-code">人话</span>
+  </a>
+
+  <a href="/tags#计划">
+    <span class="tag-code">计划</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/09/23/2018-9-23-这次我真的是来好好写博客的（续）/">
+        <span class="nav-arrow">← </span>
+        
+          「这次我真的是来好好写博客的！」（续）
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/09/23/2018-9-24-【翻译】最小化的tmux教程/">
+        
+          【翻译】一个最小化的tmux基础教程
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://whoiscc.github.io/2018/09/23/2018-9-23-活在梦里的项目一览（一）/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

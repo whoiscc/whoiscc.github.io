@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="「等我想好简介了就会把这里填上的。」">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      活在梦里的项目一览【三】（没想到吧） | Cowsay&#39;s Log
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Cowsay's Log</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>活在梦里的项目一览【三】（没想到吧）</h2>
+  <p class="post-date">2018-09-27</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>国庆佳节将至，日程却越来越满。今天下午可以选择把「下一代」的sidfam实验品写出来，也可以选择把昨晚没有写完的stream.js的重置完成（还记得上一篇文章里的「这次我不是来删代码的」吗？回过头来我就把它颠覆了个底朝天……真是奶量充足），不过我还是决定（尽量）把这个系列的初始化完成，因为毕竟，一个小时以后还有一节课呢，写起代码来忘了时间可就不好了。</p>
+<a id="more"></a>
+<p>开始之前插播一条刚刚遇到的搭环境经验。gem的可执行文件其实是一个用ruby写成的带有shebang的脚本文件，而它的shebang后面好死不死跟着的是ruby可执行程序的<strong>绝对路径</strong>，而不是类似于<code>/usr/bin/env ruby</code>之类更加灵活的东西。不知是不是受到了gem的带头作用影响（亦或是限制），jekyll也是这么干的。我的ruby没有安装在<code>/usr/local/bin</code>下面，而是<code>$HOME/Develop/bin</code>，而这两天我把它移动到了<code>$HOME/Developer/bin</code>以和我的模仿对象macOS保持一致，然后gem和jekyll就一起崩了。理论上来说可以通过手动改脚本的方式修复，但是脚本的<code>require</code>报错找不到包，也许是寻找包的路径也是写死的吧。不得已，我只好把ruby重新编译了一遍。</p>
+<hr>
+<p>刚刚提到了sidfam，那么就先讲讲它吧。这是由我导师提出的项目延伸出来的一个通用实用程序，由于其作为一个科研项目的生命周期还在延续，我就只从通用化的视角是讲解它的设计了，不过明眼人估计很快就能意识到这时从什么场景抽象出来的。</p>
+<p>假设你是一个国家的邮政/快递系统的负责人，你的手下拥有不计其数的邮局。在过去，每个邮局（A）会备一份整个国家的地图，每当有包裹到达的时候，就去根据包裹最终的目的地在地图上查询「与自己相邻的邮局」当中最合适的一家（B），将包裹发送到那一家邮局去。这里的「合适」是一个多维度的指标，首先肯定是要距离目的地近，就算不是最近的也要比A近；其次，还要考虑这家邮局的能力，比如说A知道B已经被邮件淹没了，或者A是和B相邻的唯一一家邮局（也许它三面环山？），那么B距离目的地再近你也不应该挑选它。</p>
+<p>这样听起来，每一家邮局都要拥有一个能看懂地图并作出决策的人。实际上并不能满足这一点，还有一些别的困难，比如说不同的决策者的策略不一样，导致每个人都觉得自己在进行最优的选择，最后邮件却在转圈发送等等。于是，你决定把决策权回收到你自己的手里。从此以后，邮局的行为变为「静态」的，每家邮局的墙上贴着一张大表格，一行一行写着「从A地来送去B地的邮件，发给1号邮局；从A地来送去C地的邮件，发给2号邮局……其它的邮件，通通发给99号邮局」。这里的1号到99号邮局，都是与它相邻的邮局的编号，而不是全局的编号。对于每一家邮局来说，1号邮局所指的可能都是不同的邮局，但是你作为负责人是什么都知道的。</p>
+<p>于是，面对最简化版本的问题，你面对一张地图，为每一封邮件规划好它的路线，并且将这些信息以邮局为单位进行拆分，分别交给每一家邮局。在这个模型当中，负责人是唯一具有「全局」视野的人，每一家邮局都只需要具有局部视野就可以了。</p>
+<p>（我好像顺便把软件定义网络给讲了一遍……）于是呢，sidfam就是这样一个邮政系统的负责人，给它的输入是一张国家地图，和一些「规则」，它的输出是适用于地图上每一家邮局的大表格。规则是什么呢？目前来说，规则分为以下三种：</p>
+<ul>
+<li>要求某种类型的邮件在路上必须经过某种邮局。某种类型的邮件是根据邮件的发出地/目的地/内容进行分类的，而某种邮局既可以是特定的一家邮局，也可以是一组拥有某种能力的邮局。举个例子，从A地发出来的邮件经常包含反动内容，因此需要对内容进行审查，这是一件非常耗费精力的工作，一般的小邮局承担不起，因此就可以要求从A地出发的邮件必须经过一个人手充足的邮局。</li>
+<li>规定某条链路上的负载最大值。如果从甲邮局到乙邮局之间要翻过一座大山，而甲到丙和丙到乙之间都通了高铁，那么就算经过丙稍微绕远也应该要求甲多把去往乙的邮件发往丙而不是直接发往乙，否则势必造成拥塞。</li>
+<li>在某些邮局内，可以记录一些状态，比如有的邮局会记录经过自己的总邮件数目，一天发满8000封邮件就下班；有的邮局会记录一个「发件人黑名单」，一旦发现一封邮件是这个名单上的人发出来的就把它扔掉，并且如果看到中纪委发出来的邮件就根据它的内容更新这份黑名单。这些状态可以被放置在任何邮局上，但是同一个状态只能由一个邮局持有，否则就会遇到同步性和竞态数据的问题。作为负责人，你同样需要决定每个状态由哪家邮局持有，并把与这个状态有关的邮件都引流至那家邮局。</li>
+</ul>
+<p>在传统模型下，完成前两个任务可以说举步维艰，而第三个任务基本就不可能了。sidfam不仅要成为一个称职的（功能全面的）负责人，还要尽量快速地设计出每一家邮局的大表格。事实上，我已经写完了一个半的sidfam，然而现在整个模型正面临着推倒重做的风险（其实是转机），这也就是文章的开头我所提到的实验品。</p>
+<p>事实证明，但凡有一点超出纯粹工程范畴的项目，描述时语言力不从心的程度都会令人惊异。下一篇我会接着讲一个爬虫项目和一个语言设计项目。</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#标签待添加">
+    <span class="tag-code">标签待添加</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/09/25/2018-9-25-一条流的基本素养/">
+        <span class="nav-arrow">← </span>
+        
+          【stream】起步-一条流的基本素养
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2018/09/30/2018-9-30-活在梦里的项目一览【四】/">
+        
+          活在梦里的项目一览【四】
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://whoiscc.github.io/2018/09/27/2018-9-27-活在梦里的项目一览【三】/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
